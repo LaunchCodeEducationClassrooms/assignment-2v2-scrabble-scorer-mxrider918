@@ -56,7 +56,7 @@ let vowelBonusScore = function(word){
   for (i = 0; i < word.length; i++) {
 
     if (word[i] === 'A' || word[i] === 'E' || word[i] === 'I' || word[i] === 'O' || word[i] === 'U') {
-      vowelPoints =+ 2;
+      vowelPoints += 2;
     }
     vowelPoints += 1;
     }
@@ -75,15 +75,15 @@ let scrabbleScore = function(word){
 
 const scoringAlgorithms = [
   { name: 'Simple Score',
-  description: 'Vowels are 3 points, consonants are 1 point.',
+  description: 'Each letter is worth 1 point.',
   scoringFunction: simpleScore
   },
   { name: 'Vowel Bonus',
-  description: 'Vowels are 3 points, consonants are 1 point.',
+  description: 'Vowels are 3 pts, consonants are 1 pt.',
   scoringFunction: vowelBonusScore
   },
   {name: 'Scrabble',
-  description: 'The original scoring algorithm',
+  description: 'The traditional scoring algorithm',
   scoringFunction: scrabbleScore
   }
 ];
@@ -99,13 +99,13 @@ Enter 0, 1, or 2: `)
 
 if (number === '0') {
   console.log("algorithm name: ", scoringAlgorithms[0].name);
-  return `scorerFunction result: ${scoringAlgorithms[0].scoringFunction(word)}`;
+  return `scoringFunction result: ${scoringAlgorithms[0].scoringFunction(word)}`;
   } else if (number === '1') {
     console.log("algorithm name: ", scoringAlgorithms[1].name);
-    return `scorerFunction result: ${scoringAlgorithms[1].scoringFunction(word)}`;
+    return `scoringFunction result: ${scoringAlgorithms[1].scoringFunction(word)}`;
   } else if (number === '2') {
     console.log("algorithm name: ", scoringAlgorithms[2].name);
-    return `scorerFunction result: ${scoringAlgorithms[2].scoringFunction(word)}`;
+    return `scoringFunction result: ${scoringAlgorithms[2].scoringFunction(word)}`;
   } else {
     console.log('\nPlease enter a valid number\n')
   } 
@@ -119,7 +119,7 @@ function transform(object) {
     for (i = 0; i < object[item].length; i++) {
       let key = object[item][i];
       key = key.toLowerCase();
-      newPointStructureObject[`${key}`] = Number(item);
+      newPointStructureObject['key'] = Number(item);
     }
   }
   return newPointStructureObject;
