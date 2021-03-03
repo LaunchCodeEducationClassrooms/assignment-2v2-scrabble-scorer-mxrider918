@@ -33,12 +33,12 @@ function oldScrabbleScorer(word) {
 // don't change the names or your program won't work as expected. //
 
 function initialPrompt() {
-   console.log("Let's play some Scrabble!\n");
-  return input.question("Enter a word to be scored: ");
+   console.log("Let's play some Scrabble!"); 
+  return input.question("\nEnter a word to be scored: ");
 
 };
 
-let simpleScore = function(word){
+let simpleScore = function(word) {
   word = word.toUpperCase();
   let simplePoints = 0;
 
@@ -48,7 +48,7 @@ let simpleScore = function(word){
   return simplePoints;
 };
 
-let vowelBonusScore = function(word){
+let vowelBonusScore = function(word) {
   word = word.toUpperCase();
   let vowelPoints = 0;
 
@@ -106,7 +106,7 @@ if (number === '0') {
     console.log("algorithm name: ", scoringAlgorithms[2].name);
     return `scoringFunction result: ${scoringAlgorithms[2].scoringFunction(word)}`;
   } else {
-    console.log('\nPlease enter a valid number\n')
+    console.log("\nPlease enter a valid number\n")
   } 
 }
 };
@@ -114,11 +114,11 @@ if (number === '0') {
 function transform(object) {
 
   let newPointStructureObject = {};
-  for (item in object){
+  for (item in object) {
     for (i = 0; i < object[item].length; i++) {
       let key = object[item][i];
       key = key.toLowerCase();
-      newPointStructureObject['key'] = Number(item);
+      newPointStructureObject[`${key}`] = Number(item);
     }
   }
   return newPointStructureObject;
